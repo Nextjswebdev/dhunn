@@ -1,11 +1,16 @@
 // components/Header.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
+  const [showAboutModal, setShowAboutModal] = useState(false);
 
-  return (
+  const openAboutModal = () => setShowAboutModal(true);
+  const closeAboutModal = () => setShowAboutModal(false);
+
+  return (<>
     <header className={`p-4 shadow-md sticky top-0 z-50 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 14 14" className={`${isDarkMode ? 'text-white' : 'text-black'}`}>
@@ -15,6 +20,7 @@ const Header: React.FC = () => {
           {['About This App'].map((link, index) => (
             <a
               key={link}
+              onClick={openAboutModal}
               href="#"
               className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} hover:${isDarkMode ? 'text-white' : 'text-black'}`}
             >
@@ -34,6 +40,36 @@ const Header: React.FC = () => {
         </button>
       </div>
     </header>
+      {showAboutModal && (
+       <div className={`fixed inset-0 z-50 flex items-center justify-center ${isDarkMode ? 'bg-gray-900 bg-opacity-50' : 'bg-white bg-opacity-50'}`}>
+       <div className="bg-white p-6 max-w-md mx-auto rounded-lg shadow-lg">
+         <h2 className="text-xl font-bold mb-4 text-gray-900">About Tunify Music Player</h2>
+         <div className="mb-4">
+           <Image src="/musicLover.png" alt="Tunify Music Player" width={100} height={100} className="w-full rounded-lg" />
+         </div>
+         <p className="text-gray-700">
+           Tunify Music Player offers a seamless music listening experience with a wide range of features. Discover new tracks, create playlists, and enjoy personalized recommendations.
+         </p>
+         <p className="text-gray-700">
+           With Tunify, you can explore curated playlists based on your mood and preferences. Whether you are into pop, rock, jazz, or EDM, there is something for everyone.
+         </p>
+         <p className="text-gray-700">
+           Need help or have feedback? <a href="mailto:support@tunifymusicplayer.com" className="text-blue-500 hover:underline">Contact support</a> and we will assist you promptly.
+         </p>
+         <div className="flex justify-end">
+           <button
+             onClick={closeAboutModal}
+             className="mt-4 px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-md text-gray-900 font-semibold"
+           >
+             Close
+           </button>
+         </div>
+       </div>
+     </div>
+     
+
+      )}
+      </>
   );
 };
 

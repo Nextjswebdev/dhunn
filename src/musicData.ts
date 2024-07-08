@@ -2,13 +2,14 @@ import { Song } from './types'; // Ensure correct path to types
 
 export const songs: Song[] = [
  
+
   {
-    id: '1',
-    title: 'Akhiyaan Gulaab',
-    artist: 'Mitraz',
-    coverUrl: '/covers/cover1.webp',
-    audioUrl: '/song6.mp3',
-  },
+    id: '59',
+    title: 'Heeriye ',
+    artist: 'Jasleen Royal, Arijit Singh ',
+    coverUrl: '/covers/cover128.jpg',
+    audioUrl: '/song128.mp3',
+},
   {
     id: '2',
     title: 'Akhiyaan',
@@ -16,21 +17,53 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover2.jpg',
     audioUrl: '/song7.mp3',
   },
+
+  {
+    id: '45',
+    title: 'love nwantiti ',
+    artist: 'CKay',
+    coverUrl: '/covers/cover117.jpeg',
+    audioUrl: '/song117.mp3',
+  },
+
+  {
+    id: '23',
+    title: 'Illuminati',
+    artist: 'Sushin Shyam, Dabzee',
+    coverUrl: '/covers/cover103.jpg',
+    audioUrl: '/song103.mp3',
+},
   
+{
+  id: '36',
+  title: 'Starboy',
+  artist: 'The Weeknd, Daft Punk',
+  coverUrl: '/covers/cover113.jpeg',
+  audioUrl: '/song113.mp3',
+},
+{
+  id: '39',
+  title: 'Señorita',
+  artist: 'Shawn Mendes, Camila Cabello',
+  coverUrl: '/covers/cover114.jpg',
+  audioUrl: '/song114.mp3',
+},
+
+
+  {
+    id: '300',
+    title: 'Baarishein',
+    artist: 'Anuv Jain',
+    coverUrl: '/covers/cover4.jpg',
+    audioUrl: '/song12.mp3',
+  },
+
   {
     id: '3',
     title: 'Antariksh',
     artist: 'Anuv Jain',
     coverUrl: '/covers/cover3.jpeg',
     audioUrl: '/song9.mp3',
-  },
-
-  {
-    id: '3',
-    title: 'Baarishein',
-    artist: 'Anuv Jain',
-    coverUrl: '/covers/cover4.jpg',
-    audioUrl: '/song12.mp3',
   },
 
   {
@@ -55,6 +88,36 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover7.jpg',
     audioUrl: '/song21.mp3',
   },
+  {
+    id: '30',
+    title: 'Let Me Love You',
+    artist: 'DJ Snake, Justin Bieber',
+    coverUrl: '/covers/cover109.jpeg',
+    audioUrl: '/song109.mp3',
+  },
+  {
+    id: '31',
+    title: 'Save Your Tears',
+    artist: 'The Weeknd',
+    coverUrl: '/covers/cover110.jpg',
+    audioUrl: '/song110.mp3',
+  },
+  {
+    id: '32',
+    title: 'Believer',
+    artist: 'Imagine Dragons',
+    coverUrl: '/covers/cover111.jpg',
+    audioUrl: '/song111.mp3',
+  },
+   
+  {
+    id: '34',
+    title: 'On & On',
+    artist: 'Cartoon, Daniel Levi',
+    coverUrl: '/covers/cover112.jpg',
+    audioUrl: '/song112.mp3',
+  },
+   
   {
     id: '7',
     title: 'Farq hai',
@@ -124,6 +187,8 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover16.jpg',
     audioUrl: '/song61.mp3',
   },
+
+  
  
   {
     id: '16',
@@ -170,12 +235,13 @@ export const songs: Song[] = [
     audioUrl: '/song102.mp3',
 },
 {
-    id: '23',
-    title: 'Illuminati',
-    artist: 'Sushin Shyam, Dabzee',
-    coverUrl: '/covers/cover103.jpg',
-    audioUrl: '/song103.mp3',
+  id: '1',
+  title: 'Akhiyaan Gulaab',
+  artist: 'Mitraz',
+  coverUrl: '/covers/cover1.webp',
+  audioUrl: '/song6.mp3',
 },
+
 {
   id: '24',
   title: 'O Saathi',
@@ -212,50 +278,8 @@ export const songs: Song[] = [
   coverUrl: '/covers/cover108.png',
   audioUrl: '/song108.mp3',
 },
-{
-  id: '30',
-  title: 'Let Me Love You',
-  artist: 'DJ Snake, Justin Bieber',
-  coverUrl: '/covers/cover109.jpeg',
-  audioUrl: '/song109.mp3',
-},
-{
-  id: '31',
-  title: 'Save Your Tears',
-  artist: 'The Weeknd',
-  coverUrl: '/covers/cover110.jpg',
-  audioUrl: '/song110.mp3',
-},
-{
-  id: '32',
-  title: 'Believer',
-  artist: 'Imagine Dragons',
-  coverUrl: '/covers/cover111.jpg',
-  audioUrl: '/song111.mp3',
-},
- 
-{
-  id: '34',
-  title: 'On & On',
-  artist: 'Cartoon, Daniel Levi',
-  coverUrl: '/covers/cover112.jpg',
-  audioUrl: '/song112.mp3',
-},
- 
-{
-  id: '36',
-  title: 'Starboy',
-  artist: 'The Weeknd, Daft Punk',
-  coverUrl: '/covers/cover113.jpeg',
-  audioUrl: '/song113.mp3',
-},
-{
-  id: '39',
-  title: 'Señorita',
-  artist: 'Shawn Mendes, Camila Cabello',
-  coverUrl: '/covers/cover114.jpg',
-  audioUrl: '/song114.mp3',
-},
+
+
 
 {
   id: '38',
@@ -274,13 +298,7 @@ export const songs: Song[] = [
   audioUrl: '/song116.mp3',
 },
  
-{
-  id: '45',
-  title: 'love nwantiti ',
-  artist: 'CKay',
-  coverUrl: '/covers/cover117.jpeg',
-  audioUrl: '/song117.mp3',
-},
+
 {
   id: '46',
   title: 'End of Time',
@@ -353,13 +371,7 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover127.jpg',
     audioUrl: '/song127.mp3',
 },
-{
-    id: '59',
-    title: 'Heeriye ',
-    artist: 'Jasleen Royal, Arijit Singh ',
-    coverUrl: '/covers/cover128.jpg',
-    audioUrl: '/song128.mp3',
-},
+
 {
     id: '60',
     title: 'Tum Se Hi',

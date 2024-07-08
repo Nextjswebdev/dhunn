@@ -14,19 +14,20 @@ const SearchBar: React.FC<SearchBarProps> = ({ songs, setSearchResults }) => {
   const { isDarkMode } = useTheme();
 
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value.toLowerCase();
+    const query = e.target.value.toLowerCase().trim(); // Convert query to lowercase and trim whitespace
     setSearchQuery(query);
-
+  
     // Filter songs based on the search query (start with matching)
     const filteredSongs = songs.filter(song =>
       song.title.toLowerCase().startsWith(query) || song.artist.toLowerCase().startsWith(query)
     );
-
+  
     setSearchResults(filteredSongs); // Update search results
   };
+  
 
   return (
-    <div className="mt-8">
+    <div className="mt-2">
     <input
       type="text"
       placeholder="Search songs, artists..."

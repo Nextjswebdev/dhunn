@@ -3,4 +3,8 @@
 @tailwind utilities;
 
 
+.active-song {
+  background-color: #82d385bd; /* Example of a green background for active song */
  
+  transition: background-color 0.2s; /* Smooth transition for background, text, and border */
+}
