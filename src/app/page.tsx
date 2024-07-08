@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import Head from 'next/head';
+ 
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import Player from '../components/Player';
@@ -21,10 +21,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <Head>
-        <title>My Spotify Clone</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    
 
       <Header />
 
