@@ -8,10 +8,12 @@ import Player from '../components/Player';
 import SongList from '../components/SongList';
 import { Song } from '../types';
 import { songs } from '../musicData'; // Adjust the path as per your file structure
+import { useTheme } from '../context/ThemeContext';
 
 export default function Home() {
   const [currentSong, setCurrentSong] = useState<Song | null>(null); // Specify the type as Song or null
   const [searchResults, setSearchResults] = useState<Song[]>(songs); // Initialize search results with all songs
+  const { isDarkMode } = useTheme();
 
   const handleSongClick = (song: Song) => {
     setCurrentSong(song); // Update currently playing song on click
@@ -20,7 +22,7 @@ export default function Home() {
  
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray text-black'}`}>
     
 
       <Header />

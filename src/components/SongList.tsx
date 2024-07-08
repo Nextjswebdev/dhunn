@@ -4,6 +4,7 @@ import React from 'react';
 import { Song } from '../types'; // Adjust the path as per your file structure
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 interface SongListProps {
   tracks: Song[];
@@ -11,6 +12,9 @@ interface SongListProps {
 }
 
 const SongList: React.FC<SongListProps> = ({ tracks, onSongClick }) => {
+
+  const { isDarkMode } = useTheme();
+
   const handleClick = (song: Song) => {
     onSongClick(song); // Pass the selected song to the parent component
   };
@@ -39,7 +43,7 @@ const SongList: React.FC<SongListProps> = ({ tracks, onSongClick }) => {
     {tracks.map((track) => (
       <motion.div
         key={track.id}
-        className="bg-gray-800 p-4 rounded-lg flex items-center space-x-4 cursor-pointer transform transition-transform duration-200 hover:scale-105"
+      className={`p-4 rounded-lg flex items-center space-x-4 cursor-pointer transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} hover:scale-105`}
         onClick={() => onSongClick(track)}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -47,7 +51,7 @@ const SongList: React.FC<SongListProps> = ({ tracks, onSongClick }) => {
       >
         <Image src={track.coverUrl} alt={track.title} width={64} height={64} className="h-16 w-16 rounded-lg" />
         <div>
-          <p className="text-white">{track.title}</p>
+        <p className={isDarkMode ? 'text-white' : 'text-gray-900'}>{track.title}</p>
           <p className="text-gray-400">{track.artist}</p>
         </div>
       </motion.div>

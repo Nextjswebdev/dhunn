@@ -1,5 +1,7 @@
+// layout.tsx
 import type { Metadata } from "next";
 import { Mukta } from "next/font/google";
+import { ThemeProvider } from "../context/ThemeContext"; // Adjust the import path as necessary
 import "./globals.css";
 
 const inter = Mukta({
@@ -19,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

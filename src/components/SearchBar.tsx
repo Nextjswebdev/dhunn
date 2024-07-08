@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Song } from '../types';
+import { useTheme } from '../context/ThemeContext';
 
 interface SearchBarProps {
   songs: Song[];
@@ -10,6 +11,7 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ songs, setSearchResults }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const { isDarkMode } = useTheme();
 
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value.toLowerCase();
@@ -30,7 +32,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ songs, setSearchResults }) => {
       placeholder="Search songs, artists..."
       value={searchQuery}
       onChange={handleSearchInputChange}
-      className="w-full px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-500 transition-all"
+      className={`w-full p-2 rounded-lg outline-none transition-colors duration-300 ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-500' : 'bg-gray-200 text-black placeholder-gray-600'}`}
     />
     </div>
 
