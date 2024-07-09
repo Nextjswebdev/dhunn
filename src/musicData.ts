@@ -567,20 +567,32 @@ export const songs: Song[] = [
 
 
 
-
+ 
 {
-  id: '37',
+  id: '133',
   title: 'MIDDLE OF THE NIGHT',
   artist: 'Elley Duhé',
   coverUrl: '/covers/cover133.jpg',
   audioUrl: '/song133.mp3',
 },
 {
-    id: '64',
+    id: '134',
     title: 'One Love',
     artist: 'Shubh',
     coverUrl: '/covers/cover134.jpg',
     audioUrl: '/song134.mp3',
+},
+
+
+
+
+
+{
+  id: '417',
+  title: 'Gopinath',
+  artist: 'Chakrini',
+  coverUrl: '/covers/cover417.jpeg',
+  audioUrl: '/song417.mp3',
 },
 {
     id: '65',
