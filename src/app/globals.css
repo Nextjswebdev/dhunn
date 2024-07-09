@@ -8,3 +8,18 @@
  
   transition: background-color 0.2s; /* Smooth transition for background, text, and border */
 }
+
+
+/* In global.css or the relevant CSS module */
+.player-expanded {
+  height: 100vh;
+}
+
+.player-collapsed {
+  height: 100px; /* Adjust based on your design */
+}
+
+.player-dragging {
+  transition: none;
+}
+
