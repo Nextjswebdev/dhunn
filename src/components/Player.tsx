@@ -143,23 +143,32 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
   };
 
   const handleExpand = () => {
-    setIsExpanded(!isExpanded);
+    if (isExpanded) {
+      setIsExpanded(false);
+      playerRef.current!.style.height = '';
+    } else {
+      setIsExpanded(true);
+      playerRef.current!.style.height = '100vh';
+    }
   };
-
-  const handleDragStart = (e: React.MouseEvent) => {
-    const startY = e.clientY;
+  
+  const handleDragStart = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+    const startY = ('touches' in e ? e.touches[0].clientY : e.clientY);
     const startHeight = playerRef.current?.offsetHeight ?? 0;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const newHeight = startHeight + (startY - e.clientY);
+  
+    const handleMouseMove = (moveEvent: MouseEvent | TouchEvent) => {
+      const newHeight = startHeight + (startY - ('touches' in moveEvent ? moveEvent.touches[0].clientY : moveEvent.clientY));
       if (newHeight > 100 && newHeight < window.innerHeight) {
         playerRef.current!.style.height = `${newHeight}px`;
       }
     };
-
+  
     const handleMouseUp = () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchmove', handleMouseMove);
+      document.removeEventListener('touchend', handleMouseUp);
+  
       if ((playerRef.current?.offsetHeight ?? 0) > window.innerHeight / 2) {
         setIsExpanded(true);
         playerRef.current!.style.height = '100vh';
@@ -168,25 +177,29 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
         playerRef.current!.style.height = '';
       }
     };
-
+  
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('touchmove', handleMouseMove);
+    document.addEventListener('touchend', handleMouseUp);
   };
+  
 
   return (
     <div
       ref={playerRef}
       className={`fixed bottom-0 left-0 right-0 p-4 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'} shadow-md flex items-center justify-center transition-all duration-300 ${isExpanded ? 'h-full' : 'h-30'}`}
       onMouseDown={handleDragStart}
+      onTouchStart={handleDragStart}
     >
       {currentSong ? (
         <div className={`flex items-center space-x-4 w-full ${isExpanded ? 'flex-col' : 'flex-row'} max-w-screen-lg mx-auto`}>
           <div className={`flex-shrink-0 ${isExpanded ? 'mb-4' : ''}`}>
-            <Image src={currentSong.coverUrl} alt="Song Cover" width={isExpanded ? 300 : 100} height={isExpanded ? 300 : 100} className="rounded-lg" />
+            <Image src={currentSong.coverUrl} alt="Song Cover" width={isExpanded ? 350 : 100} height={isExpanded ? 350 : 100} className="rounded-lg" />
           </div>
           <div className="flex-1 min-w-0">
-          <h3 className={`${isDarkMode ? 'text-white' : 'text-black'} ${isExpanded ? 'text-3xl' : 'text-lg'} font-bold`}>{currentSong.title}</h3>
-<p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} ${isExpanded ? 'text-xl' : 'text-base'}`}>{currentSong.artist}</p>
+            <h3 className={`${isDarkMode ? 'text-white' : 'text-black'} ${isExpanded ? 'text-3xl' : 'text-lg'} font-bold`}>{currentSong.title}</h3>
+            <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} ${isExpanded ? 'text-xl' : 'text-base'}`}>{currentSong.artist}</p>
 
             <div className="flex items-center space-x-4 mt-2">
               <input
@@ -240,6 +253,8 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 40 : 25} height={isExpanded ? 50 : 25} viewBox="0 0 24 24">
                 <path fill={isDarkMode ? '#ffffff' : '#000000'} d="M20.095 21a.75.75 0 0 1-.75-.75V3.75a.75.75 0 0 1 1.5 0v16.5a.74.74 0 0 1-.75.75m-3.4-9.589a2.25 2.25 0 0 1-.85 1.82l-9.11 7.09c-.326.247-.713.4-1.12.44h-.23a2.142 2.142 0 0 1-1-.22a2.201 2.201 0 0 1-.9-.81a2.17 2.17 0 0 1-.33-1.16V5.421a2.22 2.22 0 0 1 .31-1.12a2.25 2.25 0 0 1 .85-.8a2.18 2.18 0 0 1 2.24.1l9.12 6.08c.29.191.53.448.7.75a2.3 2.3 0 0 1 .32.98"/>
                 </svg>
+
+                
               </button>
               <button
                 className={`text-white focus:outline-none transform transition-transform duration-200 hover:scale-110 ${isShuffleActive ? 'text-green-500' : ''}`}
@@ -255,7 +270,27 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
       ) : (
         <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-lg`}>No song playing</p>
       )}
-      <audio ref={audioRef} />
+
+      <audio ref={audioRef} onEnded={handleNext} />
+
+      <button
+        className={`absolute bottom-1 right-1 p-2    text-white `}
+        onClick={handleExpand}
+      >
+        {isExpanded ? (
+
+<svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 20 : 15} height={isExpanded ? 50 : 25} viewBox="0 0 24 24">
+<path fill={isDarkMode ? '#ffffff' : '#000000'} d="M16.121 6.465L14 4.344V10h5.656l-2.121-2.121l3.172-3.172l-1.414-1.414zM4.707 3.293L3.293 4.707l3.172 3.172L4.344 10H10V4.344L7.879 6.465zM19.656 14H14v5.656l2.121-2.121l3.172 3.172l1.414-1.414l-3.172-3.172zM6.465 16.121l-3.172 3.172l1.414 1.414l3.172-3.172L10 19.656V14H4.344z"/>
+</svg>
+         
+
+      
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 20 : 15} height={isExpanded ? 50 : 25} viewBox="0 0 24 24">
+          <path fill={isDarkMode ? '#ffffff' : '#000000'} fill-rule="evenodd" d="M6 4.75c-.69 0-1.25.56-1.25 1.25v3a.75.75 0 0 1-1.5 0V6A2.75 2.75 0 0 1 6 3.25h3a.75.75 0 0 1 0 1.5zM14.25 4a.75.75 0 0 1 .75-.75h3A2.75 2.75 0 0 1 20.75 6v3a.75.75 0 0 1-1.5 0V6c0-.69-.56-1.25-1.25-1.25h-3a.75.75 0 0 1-.75-.75M4 14.25a.75.75 0 0 1 .75.75v3c0 .69.56 1.25 1.25 1.25h3a.75.75 0 0 1 0 1.5H6A2.75 2.75 0 0 1 3.25 18v-3a.75.75 0 0 1 .75-.75m16 0a.75.75 0 0 1 .75.75v3A2.75 2.75 0 0 1 18 20.75h-3a.75.75 0 0 1 0-1.5h3c.69 0 1.25-.56 1.25-1.25v-3a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/>
+      </svg>
+        )}
+      </button>
     </div>
   );
 };

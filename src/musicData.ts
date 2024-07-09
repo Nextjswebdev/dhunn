@@ -238,7 +238,7 @@ export const songs: Song[] = [
   id: '1',
   title: 'Akhiyaan Gulaab',
   artist: 'Mitraz',
-  coverUrl: '/covers/cover1.webp',
+  coverUrl: '/covers/cover1.jpeg',
   audioUrl: '/song6.mp3',
 },
 
