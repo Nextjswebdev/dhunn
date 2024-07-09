@@ -146,7 +146,7 @@ export const songs: Song[] = [
     id: '34',
     title: 'On & On',
     artist: 'Cartoon, Daniel Levi',
-    coverUrl: '/covers/cover112.jpg',
+    coverUrl: '/covers/cover112.jpeg',
     audioUrl: '/song112.mp3',
   },
    
@@ -172,14 +172,36 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover10.jpg',
     audioUrl: '/song31.mp3',
   },
+
  
+ 
+
+
+
+  {
+    id: '404',
+    title: 'Amplifier',
+    artist: 'Imran Khan',
+    coverUrl: '/covers/cover404.jpeg',
+    audioUrl: '/song404.mp3',
+  },
+
   {
     id: '10',
     title: 'Iraaday',
-    artist: ' Abdul Hannan and Rovalio',
+    artist: 'Abdul Hannan and Rovalio',
     coverUrl: '/covers/cover11.jpg',
     audioUrl: '/song34.mp3',
   },
+
+  {
+    id: '403',
+    title: 'Shinunoga E-Wa',
+    artist: 'Fujii Kaze',
+    coverUrl: '/covers/cover403.jpeg',
+    audioUrl: '/song403.mp3',
+  },
+  
   
   {
     id: '11',
@@ -236,7 +258,13 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover18.jpg',
     audioUrl: '/song72.mp3',
   },
- 
+  {
+    id: '405',
+    title: 'Bewafa',
+    artist: 'Imran Khan',
+    coverUrl: '/covers/cover405.jpeg',
+    audioUrl: '/song405.mp3',
+  },
   {
     id: '18',
     title: 'Soulmate',
@@ -329,7 +357,17 @@ export const songs: Song[] = [
   coverUrl: '/covers/cover116.jpg',
   audioUrl: '/song116.mp3',
 },
+
+
  
+{
+  id: '406',
+  title: 'Kun Faya Kun',
+  artist: 'A.R. Rahman',
+  coverUrl: '/covers/cover406.jpeg',
+  audioUrl: '/song406.mp3',
+},
+
 
 {
   id: '46',
@@ -375,6 +413,18 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover123.jpg',
     audioUrl: '/song123.mp3',
 },
+
+{
+  id: '409',
+  title: 'Intentions ',
+  artist: 'Justin Bieber, Quavo',
+  coverUrl: '/covers/cover409.jpg',
+  audioUrl: '/song409.mp3',
+},
+
+
+
+
 {
     id: '55',
     title: 'Tujhe Kitna Chahne Lage',
@@ -432,6 +482,18 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover132.jpg',
     audioUrl: '/song132.mp3',
 },
+
+{
+  id: '407',
+  title: 'Lose Yourself',
+  artist: 'Eminem',
+  coverUrl: '/covers/cover407.jpeg',
+  audioUrl: '/song407.mp3',
+},
+
+
+
+
 {
   id: '37',
   title: 'MIDDLE OF THE NIGHT',
@@ -468,6 +530,15 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover138.jpg',
     audioUrl: '/song138.mp3',
 },
+
+{
+  id: '408',
+  title: 'The Breakup Song',
+  artist: 'Pritam, Arijit Singh',
+  coverUrl: '/covers/408.jpg',
+  audioUrl: '/song408.mp3',
+},
+ 
 {
     id: '69',
     title: 'Tera Hua',
