@@ -10,13 +10,7 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover128.jpg',
     audioUrl: '/song128.mp3',
 },
-  {
-    id: '2',
-    title: 'Akhiyaan',
-    artist: 'Mitraz',
-    coverUrl: '/covers/cover2.jpg',
-    audioUrl: '/song7.mp3',
-  },
+
 
   {
     id: '45',
@@ -33,7 +27,16 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover103.jpg',
     audioUrl: '/song103.mp3',
 },
+{
+  id: '400',
+  title: 'Faded',
+  artist: 'Alan Walker',
+  coverUrl: '/covers/cover400.jpeg',
+  audioUrl: '/song400.mp3',
+},
   
+
+
 {
   id: '36',
   title: 'Starboy',
@@ -48,7 +51,24 @@ export const songs: Song[] = [
   coverUrl: '/covers/cover114.jpg',
   audioUrl: '/song114.mp3',
 },
+{
+  id: '2',
+  title: 'Akhiyaan',
+  artist: 'Mitraz',
+  coverUrl: '/covers/cover2.jpg',
+  audioUrl: '/song7.mp3',
+},
 
+ 
+
+
+{
+  id: '401',
+  title: "We Don't Talk Anymore",
+  artist: 'Charlie Puth, Selena Gomez',
+  coverUrl: '/covers/cover401.jpeg',
+  audioUrl: '/song401.mp3',
+},
 
   {
     id: '300',
@@ -72,6 +92,16 @@ export const songs: Song[] = [
     artist: 'Aditya A',
     coverUrl: '/covers/cover5.jpeg',
     audioUrl: '/song15.mp3',
+  },
+
+
+
+  {
+    id: '402',
+    title: "Bad Habits",
+    artist: 'Ed Sheeran',
+    coverUrl: '/covers/cover402.jpeg',
+    audioUrl: '/song402.mp3',
   },
   {
     id: '5',
@@ -110,6 +140,16 @@ export const songs: Song[] = [
     audioUrl: '/song111.mp3',
   },
    
+
+
+
+{
+  id: '403',
+  title: '  Иса',
+  artist: 'Andro',
+  coverUrl: '/covers/cover404.jpeg',
+  audioUrl: '/song404.mp3',
+},
   {
     id: '34',
     title: 'On & On',
@@ -238,7 +278,7 @@ export const songs: Song[] = [
   id: '1',
   title: 'Akhiyaan Gulaab',
   artist: 'Mitraz',
-  coverUrl: '/covers/cover1.jpeg',
+  coverUrl: '/covers/cover1.webp',
   audioUrl: '/song6.mp3',
 },
 
