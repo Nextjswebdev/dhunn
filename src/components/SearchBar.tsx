@@ -27,7 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ songs, setSearchResults }) => {
   
 
   return (
-    <div className="mt-2">
+    <div className="mt-0">
     <input
       type="text"
       placeholder="Search songs, artists..."

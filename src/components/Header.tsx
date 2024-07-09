@@ -5,29 +5,15 @@ import Image from 'next/image';
 
 const Header: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
-  const [showAboutModal, setShowAboutModal] = useState(false);
+  
 
-  const openAboutModal = () => setShowAboutModal(true);
-  const closeAboutModal = () => setShowAboutModal(false);
+  
 
-  return (<>
-    <header className={`p-4 shadow-md sticky top-0 z-50 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 14 14" className={`${isDarkMode ? 'text-white' : 'text-black'}`}>
-          <path fill="currentColor" fillRule="evenodd" d="M9.812.633c.183-.836 1.374-.841 1.565-.006l.009.04l.018.077c.22.935.976 1.649 1.923 1.814c.872.151.872 1.404 0 1.556A2.398 2.398 0 0 0 11.4 5.943l-.023.102c-.19.835-1.382.83-1.565-.007l-.02-.088a2.383 2.383 0 0 0-1.918-1.838c-.871-.151-.871-1.401 0-1.553A2.383 2.383 0 0 0 9.79.731l.014-.065l.007-.033ZM3.74 4.24l2.406-.668c.088.75.602 1.45 1.541 1.614c.518.09.93.484 1.043.998l.019.088l.013.057L4.395 7.54v4.268a2.188 2.188 0 1 1-1.5-2.078V5.34a1.147 1.147 0 0 1 .845-1.1m7.807 3.273a1.977 1.977 0 0 1-1.637.123a2.192 2.192 0 0 0-2.739 2.118a2.188 2.188 0 0 0 4.376.056V7.512Z" clipRule="evenodd" />
-        </svg>
-        <nav className="flex space-x-4">
-          {['About This App'].map((link, index) => (
-            <a
-              key={link}
-              onClick={openAboutModal}
-              href="#"
-              className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} hover:${isDarkMode ? 'text-white' : 'text-black'}`}
-            >
-              {link}
-            </a>
-          ))}
-        </nav>
+  return ( 
+    <div className='p-4  sticky top-0 right-0 z-50  flex justify-end'>
+ 
+        
+        
         <button
           onClick={toggleTheme}
           className={`p-2 rounded-full   hover:shadow-lg transition-all duration-300`}
@@ -38,38 +24,10 @@ const Header: React.FC = () => {
     <path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333Q4.058 15.333 4.058 12q0-3.038 1.98-5.27Q8.02 4.5 10.942 4.097q.081 0 .159.006t.153.017q-.506.706-.801 1.57q-.295.865-.295 1.811q0 2.667 1.866 4.533q1.867 1.867 4.534 1.867q.952 0 1.813-.295q.862-.295 1.548-.801q.012.075.018.153q.005.078.005.158q-.384 2.923-2.615 4.904T12.057 20Zm0-1q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.158 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5.058 12q0 2.9 2.05 4.95t4.95 2.05Zm-.25-6.75Z"/>
 </svg>}
         </button>
-      </div>
-    </header>
-      {showAboutModal && (
-       <div className={`fixed inset-0 z-50 flex items-center justify-center ${isDarkMode ? 'bg-gray-900 bg-opacity-50' : 'bg-white bg-opacity-50'}`}>
-       <div className="bg-white p-6 max-w-md mx-auto rounded-lg shadow-lg">
-         <h2 className="text-xl font-bold mb-4 text-gray-900">About Tunify Music Player</h2>
-         <div className="mb-4">
-           <Image src="/musicLover.png" alt="Tunify Music Player" width={100} height={100} className="w-full rounded-lg" />
-         </div>
-         <p className="text-gray-700">
-           Tunify Music Player offers a seamless music listening experience with a wide range of features. Discover new tracks, create playlists, and enjoy personalized recommendations.
-         </p>
-         <p className="text-gray-700">
-           With Tunify, you can explore curated playlists based on your mood and preferences. Whether you are into pop, rock, jazz, or EDM, there is something for everyone.
-         </p>
-         <p className="text-gray-700">
-           Need help or have feedback? <a href="mailto:support@tunifymusicplayer.com" className="text-blue-500 hover:underline">Contact support</a> and we will assist you promptly.
-         </p>
-         <div className="flex justify-end">
-           <button
-             onClick={closeAboutModal}
-             className="mt-4 px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-md text-gray-900 font-semibold"
-           >
-             Close
-           </button>
-         </div>
-       </div>
-     </div>
      
-
-      )}
-      </>
+    </div>
+      
+    
   );
 };
 

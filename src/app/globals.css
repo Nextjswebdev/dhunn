@@ -4,10 +4,86 @@
 
 
 .active-song {
-  background-color: #82d385bd; /* Example of a green background for active song */
- 
-  transition: background-color 0.2s; /* Smooth transition for background, text, and border */
+  position: relative;
+  overflow: hidden;
+  background-color: #88e58b; /* Example of a green background for active song */
+  height: 100px; /* Adjust the height as needed */
 }
+
+.active-song::before,
+.active-song::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  min-width: 300vw;
+  min-height: 300vw;
+  background-color: #FCFFF5; /* Example background color for the wave */
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.active-song::before {
+  bottom: 15vh;
+  border-radius: 45%;
+  animation-duration: 10s;
+}
+
+.active-song::after {
+  bottom: 12vh;
+  opacity: 0.5;
+  border-radius: 47%;
+  animation-duration: 10s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+
+.active-song::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 300vw; /* Adjust width as needed for the wave */
+  height: 300vw; /* Adjust height as needed for the wave */
+  min-width: 300vw; /* Ensure minimum width covers the container */
+  min-height: 300vw; /* Ensure minimum height covers the container */
+  background-color: #FCFFF5; /* Example background color for the wave */
+  border-radius: 45%; /* Adjust border radius for the wave shape */
+  opacity: 0.5; /* Adjust opacity as needed */
+  transform: translateX(-50%);
+  animation: wave 8s linear infinite; /* Wave animation */
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -1%) rotateZ(0deg);
+  }
+  25% {
+    transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  50% {
+    transform: translate(-50%, -3%) rotateZ(360deg);
+  }
+  75% {
+    transform: translate(-50%, -4%) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-50%, -1%) rotateZ(360deg);
+  }
+}
+
+
+
 
 
 /* In global.css or the relevant CSS module */

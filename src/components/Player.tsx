@@ -274,19 +274,19 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
       <audio ref={audioRef} onEnded={handleNext} />
 
       <button
-        className={`absolute bottom-1 right-1 p-2    text-white `}
+        className={`absolute bottom-2 right-2 p-2    text-white `}
         onClick={handleExpand}
       >
         {isExpanded ? (
 
-<svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 20 : 15} height={isExpanded ? 50 : 25} viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 20 : 15} height={isExpanded ? 20 : 15} viewBox="0 0 24 24">
 <path fill={isDarkMode ? '#ffffff' : '#000000'} d="M16.121 6.465L14 4.344V10h5.656l-2.121-2.121l3.172-3.172l-1.414-1.414zM4.707 3.293L3.293 4.707l3.172 3.172L4.344 10H10V4.344L7.879 6.465zM19.656 14H14v5.656l2.121-2.121l3.172 3.172l1.414-1.414l-3.172-3.172zM6.465 16.121l-3.172 3.172l1.414 1.414l3.172-3.172L10 19.656V14H4.344z"/>
 </svg>
          
 
       
         ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 20 : 15} height={isExpanded ? 50 : 25} viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 20 : 15} height={isExpanded ? 20 : 15} viewBox="0 0 24 24">
           <path fill={isDarkMode ? '#ffffff' : '#000000'} fill-rule="evenodd" d="M6 4.75c-.69 0-1.25.56-1.25 1.25v3a.75.75 0 0 1-1.5 0V6A2.75 2.75 0 0 1 6 3.25h3a.75.75 0 0 1 0 1.5zM14.25 4a.75.75 0 0 1 .75-.75h3A2.75 2.75 0 0 1 20.75 6v3a.75.75 0 0 1-1.5 0V6c0-.69-.56-1.25-1.25-1.25h-3a.75.75 0 0 1-.75-.75M4 14.25a.75.75 0 0 1 .75.75v3c0 .69.56 1.25 1.25 1.25h3a.75.75 0 0 1 0 1.5H6A2.75 2.75 0 0 1 3.25 18v-3a.75.75 0 0 1 .75-.75m16 0a.75.75 0 0 1 .75.75v3A2.75 2.75 0 0 1 18 20.75h-3a.75.75 0 0 1 0-1.5h3c.69 0 1.25-.56 1.25-1.25v-3a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/>
       </svg>
         )}

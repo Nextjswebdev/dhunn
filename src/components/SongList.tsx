@@ -49,11 +49,14 @@ const SongList: React.FC<SongListProps> = ({ tracks, onSongClick }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          
         >
+          
+
           <Image src={track.coverUrl} alt={track.title} width={64} height={64} className="h-16 w-16 rounded-lg" />
           <div>
             <p className={isDarkMode ? 'text-white' : 'text-gray-900'}>{track.title}</p>
-            <p className={`${currentSong && currentSong.id === track.id ? 'text-gray-500' : isDarkMode ? 'text-gray-400' :'text-gray-500'}`}>{track.artist}</p>
+            <p className={`${currentSong && currentSong.id === track.id ? 'text-gray-900' : isDarkMode ? 'text-gray-400' :'text-gray-500'}`}>{track.artist}</p>
           </div>
         </motion.div>
       ))}
