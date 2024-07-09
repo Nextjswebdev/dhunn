@@ -187,15 +187,26 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
 
   return (
     <div
-      ref={playerRef}
-      className={`fixed bottom-0 left-0 right-0 p-4 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'} shadow-md flex items-center justify-center transition-all duration-300 ${isExpanded ? 'h-full' : 'h-30'}`}
-      onMouseDown={handleDragStart}
-      onTouchStart={handleDragStart}
-    >
-      {currentSong ? (
-        <div className={`flex items-center space-x-4 w-full ${isExpanded ? 'flex-col' : 'flex-row'} max-w-screen-lg mx-auto`}>
+    ref={playerRef}
+    className={`fixed bottom-0 left-0 right-0 p-4 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'} shadow-md flex items-center justify-center transition-all duration-300 ${isExpanded ? 'h-full' : 'h-30'}`}
+    onMouseDown={handleDragStart}
+    onTouchStart={handleDragStart}
+  >
+    {currentSong ? (
+     <div className={`flex items-center space-x-4 w-full ${isExpanded ? 'flex-col' : 'flex-row'} max-w-screen-lg mx-auto ${isExpanded ? 'snow-background' : ''}`}>
+     {isExpanded && (
+ 
+       <div className="ripple-background ">
+         <div className={`circle xxlarge ${isDarkMode ? 'dark-mode-shade1' : 'shade1'}`}></div>
+        <div className={`circle xlarge ${isDarkMode ? 'dark-mode-shade2' : 'shade2'}`}></div>
+        <div className={`circle large ${isDarkMode ? 'dark-mode-shade3' : 'shade3'}`}></div>
+        <div className={`circle medium ${isDarkMode ? 'dark-mode-shade4' : 'shade4'}`}></div>
+        <div className={`circle small ${isDarkMode ? 'dark-mode-shade5' : 'shade5'}`}></div>
+       </div>
+  
+     )}
           <div className={`flex-shrink-0 ${isExpanded ? 'mb-4' : ''}`}>
-            <Image src={currentSong.coverUrl} alt="Song Cover" width={isExpanded ? 350 : 100} height={isExpanded ? 350 : 100} className="rounded-lg" />
+            <Image src={currentSong.coverUrl} alt="Song Cover" width={isExpanded ? 350 : 100} height={isExpanded ? 350 : 100} className="rounded-lg border" />
           </div>
           <div className="flex-1 min-w-0">
             <h3 className={`${isDarkMode ? 'text-white' : 'text-black'} ${isExpanded ? 'text-3xl' : 'text-lg'} font-bold`}>{currentSong.title}</h3>
@@ -268,7 +279,7 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
           </div>
         </div>
       ) : (
-        <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-lg`}>No song playing</p>
+        <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-lg`}>Select a song to see player.</p>
       )}
 
       <audio ref={audioRef} onEnded={handleNext} />
