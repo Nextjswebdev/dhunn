@@ -245,16 +245,18 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
                 onClick={handlePlayPause}
               >
                 {isPlaying ? (
-                   <svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 40 : 25} height={isExpanded ? 50 : 25} viewBox="0 0 48 48">
+
+<svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 40 : 25} height={isExpanded ? 50 : 25} viewBox="0 0 16 16">
+<path fill={isDarkMode ? '#ffffff' : '#000000'} d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13a6.5 6.5 0 0 1 0 13zM5 5h2v6H5zm4 0h2v6H9z" />
+</svg>
+                  
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 40 : 25} height={isExpanded ? 50 : 25} viewBox="0 0 48 48">
                    <g fill="none" stroke={isDarkMode ? '#ffffff' : '#000000'} strokeLinejoin="round" strokeWidth="4">
                      <path d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4S4 12.954 4 24s8.954 20 20 20Z" />
                      <path d="M20 24v-6.928l6 3.464L32 24l-6 3.464l-6 3.464V24Z" />
                    </g>
                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" width={isExpanded ? 40 : 25} height={isExpanded ? 50 : 25} viewBox="0 0 16 16">
-                  <path fill={isDarkMode ? '#ffffff' : '#000000'} d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13a6.5 6.5 0 0 1 0 13zM5 5h2v6H5zm4 0h2v6H9z" />
-                </svg>
                 )}
               </button>
               <button

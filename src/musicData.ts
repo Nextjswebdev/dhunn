@@ -70,6 +70,8 @@ export const songs: Song[] = [
   audioUrl: '/song401.mp3',
 },
 
+
+
   {
     id: '300',
     title: 'Baarishein',
@@ -140,7 +142,18 @@ export const songs: Song[] = [
     audioUrl: '/song111.mp3',
   },
    
+  
 
+  
+  {
+    id: '414',
+    title: 'Lost Soul',
+    artist: 'NBSPLV',
+    coverUrl: '/covers/cover414.jpeg',
+    audioUrl: '/song414.mp3',
+  },
+   
+  
  
   {
     id: '34',
@@ -459,7 +472,7 @@ export const songs: Song[] = [
   id: '409',
   title: 'Intentions ',
   artist: 'Justin Bieber, Quavo',
-  coverUrl: '/covers/cover409.jpg',
+  coverUrl: '/covers/cover409.jpeg',
   audioUrl: '/song409.mp3',
 },
 
@@ -522,6 +535,26 @@ export const songs: Song[] = [
     artist: 'Vishal Mishra',
     coverUrl: '/covers/cover132.jpg',
     audioUrl: '/song132.mp3',
+},
+
+{
+  id: '415',
+  title: "Est-ce que tu m'aimes ? ",
+  artist: 'GIMS',
+  coverUrl: '/covers/cover415.jpeg',
+  audioUrl: '/song415.mp3',
+},
+
+
+
+
+
+{
+  id: '416',
+  title: 'The Drum',
+  artist: 'Alan Walker',
+  coverUrl: '/covers/cover416.jpeg',
+  audioUrl: '/song416.mp3',
 },
 
 {
