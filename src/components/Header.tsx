@@ -1,17 +1,39 @@
-// components/Header.tsx
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import Image from 'next/image';
+import '../app/globals.css'
+
+ 
+
+import Modal from '../components/ModalBox';
 
 const Header: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
-  
-
-  
-
-  return ( 
-    <div className='p-4  sticky top-0 right-0 z-50  flex justify-end'>
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [showModal, setShowModal] = useState(false);
  
+
+  const handleTunifyClick = () => {
+    setIsModalOpen(true); // Open modal when Tunify is clicked
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close modal
+  };
+
+  return (
+    <div className='flex justify-between p-5'>
+     
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50"    onClick={() => setShowModal(true)} className='cursor-pointer underline'>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="#344054" stroke-width="3" d="M25.104 28.125h-.208"/>
+        <path stroke="#344054" stroke-width="2" d="M25 18.75v-4.167"/>
+        <path stroke="#306CFE" stroke-width="2" d="M41.667 6.25H8.333A2.083 2.083 0 0 0 6.25 8.333v27.084A2.083 2.083 0 0 0 8.333 37.5h8.334v6.25l10.416-6.25h14.584a2.083 2.083 0 0 0 2.083-2.083V8.333a2.083 2.083 0 0 0-2.083-2.083"/>
+    </g>
+</svg>
+     
+      {showModal && <Modal onClose={() => setShowModal(false)} />}
+
+     
         
         
         <button
