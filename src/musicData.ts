@@ -202,7 +202,26 @@ export const songs: Song[] = [
     audioUrl: '/song403.mp3',
   },
   
+  {
+    id: '410',
+    title: 'Ek Zindagi',
+    artist: 'Taniskaa Sanghvi, Sachin-Jigar',
+    coverUrl: '/covers/cover410.jpeg',
+    audioUrl: '/song410.mp3',
+  },
+
+  {
+    id: '411',
+    title: 'Bumbro',
+    artist: 'Shankar Mahadevan, Sunidhi Chauhan',
+    coverUrl: '/covers/cover411.jpeg',
+    audioUrl: '/song411.mp3',
+  },
   
+  
+ 
+
+
   {
     id: '11',
     title: 'Junoon',
@@ -226,6 +245,18 @@ export const songs: Song[] = [
     coverUrl: '/covers/cover14.jpg',
     audioUrl: '/song47.mp3',
   },
+
+  {
+    id: '412',
+    title: 'Everything at Once',
+    artist: 'Lenka',
+    coverUrl: '/covers/cover412.jpg',
+    audioUrl: '/song412.mp3',
+  },
+
+
+
+
   {
     id: '14',
     title: 'Lamhey',
