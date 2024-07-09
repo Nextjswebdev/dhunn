@@ -141,15 +141,7 @@ export const songs: Song[] = [
   },
    
 
-
-
-{
-  id: '403',
-  title: '  Иса',
-  artist: 'Andro',
-  coverUrl: '/covers/cover404.jpeg',
-  audioUrl: '/song404.mp3',
-},
+ 
   {
     id: '34',
     title: 'On & On',
