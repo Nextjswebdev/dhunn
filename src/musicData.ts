@@ -213,7 +213,7 @@ export const songs: Song[] = [
   {
     id: '411',
     title: 'Bumbro',
-    artist: 'Shankar Mahadevan, Sunidhi Chauhan',
+    artist: 'Shirley Setia, Parry G, Aditya Dev',
     coverUrl: '/covers/cover411.jpeg',
     audioUrl: '/song411.mp3',
   },
@@ -254,7 +254,17 @@ export const songs: Song[] = [
     audioUrl: '/song412.mp3',
   },
 
+  {
+    id: '413',
+    title: 'Left and Right',
+    artist: 'Charlie Puth, Jung Kook, BTS',
+    coverUrl: '/covers/cover413.jpeg',
+    audioUrl: '/song413.mp3',
+  },
 
+ 
+
+ 
 
 
   {
