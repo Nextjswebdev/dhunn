@@ -44,7 +44,7 @@ const SongList: React.FC<SongListProps> = ({ tracks, onSongClick }) => {
       {tracks.map((track) => (
         <motion.div
           key={track.id}
-          className={`p-4 rounded-lg flex items-center space-x-4 cursor-pointer transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} ${currentSong && currentSong.id === track.id ? 'active-song' : ''}`}
+          className={`p-4 rounded-lg flex items-center space-x-4 cursor-pointer transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-black'} ${currentSong && currentSong.id === track.id ? 'active-song' : ''}`}
           onClick={() => handleClick(track)} // Call handleClick when a song is clicked
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

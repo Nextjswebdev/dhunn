@@ -19,7 +19,7 @@ const Modal = ({ onClose }: { onClose: () => void }) => {
         <div className="text-sm text-gray-700">
           <div className="w-full  ">
             <div className="w-full mb-5">
-              <Image src='/musiclover.png' width={30} height={30} alt="App Image" layout="responsive" className="w-full h-full rounded-lg" />
+              <Image src='/musiclover.jpg' width={30} height={30} alt="App Image" layout="responsive" className="w-full h-full rounded-lg" />
             </div>
           </div>
           <p>Welcome to Tunify Music Player built with <strong>Next.js</strong>, <strong>framer-motion</strong>, <strong>Tailwind CSS</strong>, <strong>IconBuddy</strong>, <strong>Culrs</strong>, and <strong>Vercel</strong>.</p>

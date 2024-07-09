@@ -352,7 +352,7 @@ export const songs: Song[] = [
   id: '1',
   title: 'Akhiyaan Gulaab',
   artist: 'Mitraz',
-  coverUrl: '/covers/cover1.webp',
+  coverUrl: '/covers/cover1.jpeg',
   audioUrl: '/song6.mp3',
 },
 
@@ -621,7 +621,7 @@ export const songs: Song[] = [
   id: '408',
   title: 'The Breakup Song',
   artist: 'Pritam, Arijit Singh',
-  coverUrl: '/covers/408.jpg',
+  coverUrl: '/covers/cover408.jpeg',
   audioUrl: '/song408.mp3',
 },
  
