@@ -250,7 +250,7 @@ export const songs: Song[] = [
     id: '412',
     title: 'Everything at Once',
     artist: 'Lenka',
-    coverUrl: '/covers/cover412.jpg',
+    coverUrl: '/covers/cover412.jpeg',
     audioUrl: '/song412.mp3',
   },
 
