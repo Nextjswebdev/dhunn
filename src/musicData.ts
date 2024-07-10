@@ -2,7 +2,13 @@ import { Song } from './types'; // Ensure correct path to types
 
 export const songs: Song[] = [
  
-
+  {
+    id: '419',
+    title: 'Blockbuster',
+    artist: 'Faris Shafi, Umair Butt',
+    coverUrl: '/covers/cover419.jpeg',
+    audioUrl: '/song419.mp3',
+  },
   {
     id: '59',
     title: 'Heeriye ',
@@ -43,6 +49,14 @@ export const songs: Song[] = [
   artist: 'The Weeknd, Daft Punk',
   coverUrl: '/covers/cover113.jpeg',
   audioUrl: '/song113.mp3',
+},
+
+{
+  id: '418',
+  title: 'Afreen Afreen',
+  artist: 'Rahat Fateh Ali Khan',
+  coverUrl: '/covers/cover418.jpeg',
+  audioUrl: '/song418.mp3',
 },
 {
   id: '39',
