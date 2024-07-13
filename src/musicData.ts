@@ -4,8 +4,8 @@ export const songs: Song[] = [
  
   {
     id: '419',
-    title: 'Blockbuster',
-    artist: 'Faris Shafi, Umair Butt',
+    title: 'Aasmaan',
+    artist: 'Sanjana Devarajan',
     coverUrl: '/covers/cover419.jpeg',
     audioUrl: '/song419.mp3',
   },
