@@ -32,7 +32,7 @@ export const songs: Song[] = [
   id: '500',
   title: 'Hum Mar Jayenge ',
   artist: 'Tulsi Kumar, Arijit Singh',
-  coverUrl: '/covers/cover500.jpg',
+  coverUrl: '/covers/cover500.jpeg',
   audioUrl: '/song500.mp3',
 },
   {
