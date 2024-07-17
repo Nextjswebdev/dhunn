@@ -18,6 +18,23 @@ export const songs: Song[] = [
 },
 
 
+{
+  id: '29',
+  title: 'STAY',
+  artist: 'The Kid LAROI, Justin Bieber',
+  coverUrl: '/covers/cover108.png',
+  audioUrl: '/song108.mp3',
+},
+
+
+
+{
+  id: '500',
+  title: 'Hum Mar Jayenge ',
+  artist: 'Tulsi Kumar, Arijit Singh',
+  coverUrl: '/covers/cover500.jpg',
+  audioUrl: '/song500.mp3',
+},
   {
     id: '45',
     title: 'love nwantiti ',
@@ -398,13 +415,6 @@ export const songs: Song[] = [
   artist: 'The Weeknd',
   coverUrl: '/covers/cover107.jpg',
   audioUrl: '/song107.mp3',
-},
-{
-  id: '29',
-  title: 'STAY',
-  artist: 'The Kid LAROI, Justin Bieber',
-  coverUrl: '/covers/cover108.png',
-  audioUrl: '/song108.mp3',
 },
 
 
