@@ -26,10 +26,6 @@ export const songs: Song[] = [
     audioUrl: '/song108.mp3',
   },
 
-<<<<<<< HEAD
-=======
-
-
 {
   id: '500',
   title: 'Hum Mar Jayenge ',
@@ -37,8 +33,7 @@ export const songs: Song[] = [
   coverUrl: '/covers/cover500.jpeg',
   audioUrl: '/song500.mp3',
 },
->>>>>>> origin/main
-  {
+ {
     id: '45',
     title: 'love nwantiti ',
     artist: 'CKay',
