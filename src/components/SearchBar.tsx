@@ -14,27 +14,27 @@ const SearchBar: React.FC<SearchBarProps> = ({ songs, setSearchResults }) => {
   const { isDarkMode } = useTheme();
 
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value.toLowerCase().trim(); // Convert query to lowercase and trim whitespace
+    const query = e.target.value.toLowerCase().trim();
     setSearchQuery(query);
-  
-    // Filter songs based on the search query (start with matching)
+
+    // Filter songs = starting of artist or song
     const filteredSongs = songs.filter(song =>
       song.title.toLowerCase().startsWith(query) || song.artist.toLowerCase().startsWith(query)
     );
-  
-    setSearchResults(filteredSongs); // Update search results
+
+    setSearchResults(filteredSongs); // update  
   };
-  
+
 
   return (
     <div className="mt-0">
-    <input
-      type="text"
-      placeholder="Search songs, artists..."
-      value={searchQuery}
-      onChange={handleSearchInputChange}
-      className={`w-full p-2 rounded-lg outline-none transition-colors duration-300 ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-500' : 'bg-gray-200 text-black placeholder-gray-600'}`}
-    />
+      <input
+        type="text"
+        placeholder="Search songs, artists..."
+        value={searchQuery}
+        onChange={handleSearchInputChange}
+        className={`w-full p-2 rounded-lg outline-none transition-colors duration-300 ${isDarkMode ? 'bg-gray-800 text-white placeholder-gray-500' : 'bg-gray-200 text-black placeholder-gray-600'}`}
+      />
     </div>
 
   );
