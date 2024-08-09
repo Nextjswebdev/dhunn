@@ -3,6 +3,20 @@ import { Song } from './types'; // Ensure correct path to types
 export const songs: Song[] = [
 
   {
+    id: '420',
+    title: 'Welcome Here',
+    artist: 'ChewieCatt',
+    coverUrl: '/covers/cover420.jpg',
+    audioUrl: '/song420.mp3',
+  },
+  {
+    id: '421',
+    title: 'Wake Me Up',
+    artist: 'Avicii',
+    coverUrl: '/covers/cover421.jpg',
+    audioUrl: '/song421.mp3',
+  },
+  {
     id: '419',
     title: 'Aasmaan',
     artist: 'Sanjana Devarajan',
